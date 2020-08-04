@@ -14,9 +14,9 @@ img_norm = img_norm.astype(np.uint8)
 img_norm2 = cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX)
 
 #--④ 히스토그램 계산
-hist = cv2.calcHist([img], [0], None, [256], [0, 255])
-hist_norm = cv2.calcHist([img_norm], [0], None, [256], [0, 255])
-hist_norm2 = cv2.calcHist([img_norm2], [0], None, [256], [0, 255])
+hist = cv2.calcHist([img], [0], None, [256], [0, 256])
+hist_norm = cv2.calcHist([img_norm], [0], None, [256], [0, 256])
+hist_norm2 = cv2.calcHist([img_norm2], [0], None, [256], [0, 256])
 
 cv2.imshow('Before', img)
 cv2.imshow('Manual', img_norm)

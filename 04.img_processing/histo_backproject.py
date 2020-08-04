@@ -24,7 +24,9 @@ def backProject_manual(hist_roi):
     #--⑨ 비율에 맞는 픽셀 값 매핑
     h,s,v = cv2.split(hsv_img)
     bp = hist_rate[h.ravel(), s.ravel()]
+    # 비율은 1을 넘어서는 안되기 때문에 1을 넘는 수는 1을 갖게 함
     bp = np.minimum(bp, 1)
+    # 1차원 배열을 원래의 shape로 변환
     bp = bp.reshape(hsv_img.shape[:2])
     cv2.normalize(bp,bp, 0, 255, cv2.NORM_MINMAX)
     bp = bp.astype(np.uint8)
@@ -42,6 +44,7 @@ def backProject_cv(hist_roi):
 (x,y,w,h) = cv2.selectROI(win_name, img, False)
 if w > 0 and h > 0:
     roi = draw[y:y+h, x:x+w]
+    # 빨간 사각형으로 ROI 영역 표시
     cv2.rectangle(draw, (x, y), (x+w, y+h), (0,0,255), 2)
     #--② 선택한 ROI를 HSV 컬러 스페이스로 변경
     hsv_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
