@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 
 # 왜곡 계수 설정 ---①
-k1, k2, k3 = 0.5, 0.2, 0.0 # 배럴 왜곡
-#k1, k2, k3 = -0.3, 0, 0    # 핀큐션 왜곡
+# k1, k2, k3 = 0.5, 0.2, 0.0 # 배럴 왜곡
+k1, k2, k3 = -0.3, 0, 0    # 핀큐션 왜곡
 
-img = cv2.imread('../img/girl.jpg')
+img = cv2.imread('../img/yeosu_small.jpg')
 rows, cols = img.shape[:2]
 
 # 매핑 배열 생성 ---②
