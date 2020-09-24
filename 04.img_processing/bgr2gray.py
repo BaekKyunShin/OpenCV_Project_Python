@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('../img/yeosu.jpg')
+img = cv2.imread('../img/yeosu_small.jpg')
 
 img2 = img.astype(np.uint16)                # dtype 변경 ---①
 b,g,r = cv2.split(img2)                     # 채널 별로 분리 ---②
