@@ -68,3 +68,7 @@
     - BOW (BOW 알고리즘과 객체 인식)
     - 캐스케이드 분류기
     - 실전 워크숍
+
+## 이미지 파일 다운로드
+
+이미지 파일은 [이곳](https://github.com/dltpdn/insightbook.opencv_project_python)에서 다운받으시면 됩니다.
